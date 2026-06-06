@@ -1,0 +1,15 @@
+name: Notificación a ntfy.sh
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar notificación a ntfy.sh/devops-itla
+        run: |
+          curl -d "Nuevo código fue subido a la rama main del repositorio Practica4-hola-mundo" \
+            https://ntfy.sh/devops-itla
